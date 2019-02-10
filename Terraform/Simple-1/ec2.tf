@@ -3,8 +3,10 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
-              nohup busybox httpd -f -p 8080 &
+              yum update -y
+              yum install httpd -y
+              service httpd start
+              chkconfig httpd on
               EOF
   security_groups = ["terraform-example-instance"]
   tags {
