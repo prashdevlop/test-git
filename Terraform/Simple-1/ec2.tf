@@ -6,7 +6,7 @@ resource "aws_instance" "example" {
               echo "Hello, World" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
-
+  security_groups = "terraform-example-instance"
   tags {
     Name = "terraform-example"
   }
