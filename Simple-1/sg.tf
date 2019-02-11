@@ -1,5 +1,5 @@
 resource "aws_security_group" "instance" {
-  name = "my_new_security_group"
+  name = "${my_dmz}"
   ingress {
     from_port = 80
     to_port = 80
