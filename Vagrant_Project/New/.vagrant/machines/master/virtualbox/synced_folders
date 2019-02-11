@@ -1,1 +1,0 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"E:/Projects/Test1/test-git/Vagrant_Project/New","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
