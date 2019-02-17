@@ -1,9 +1,11 @@
 #! /bin/bash
 sudo yum update –y
+sleep 20
 sudo yum install wget -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 sudo yum install java -y
+sleep 30
 sudo yum install jenkins -y
 sudo service jenkins start
 cd
