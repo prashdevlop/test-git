@@ -7,7 +7,8 @@ pipeline {
             }
         }
         stage('test') {
-            sh 'git clone https://github.com/prashdevlop/test-git.git -b Docker'
+            
+            echo "Hello"
         }
     }
 }
