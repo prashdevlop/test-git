@@ -12,7 +12,8 @@ resource "aws_instance" "example" {
   # We run a remote provisioner on the instance after creating it.
   # In this case, we just install nginx and start it. By default,
   # this should be on port 80
-  user_data = "${file("userdata.sh")}"
+  #user_data = "${file("userdata.sh")}"
+  user_data = "${data.template_file.user_data.rendered}"
   #user_data = <<-EOF
   #            #!/bin/bash
   #            yum update -y
@@ -24,4 +25,8 @@ resource "aws_instance" "example" {
   tags {
     Name = "${var.tag_name}"
   }
+}
+
+data "template_file" "user_data" {
+  template = "${file("user_data.tpl")}"
 }
