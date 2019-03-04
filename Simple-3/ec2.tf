@@ -1,6 +1,7 @@
 resource "aws_instance" "example" {
   ami = "${var.my_ami}"
   instance_type = "t2.micro"
+  key_name = "terraform"
 
   #key_name = "${var.key_name}"
 
