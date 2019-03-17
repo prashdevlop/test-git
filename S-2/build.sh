@@ -1,4 +1,5 @@
 #!/bin/bash
+id
 sudo yum update -y
 sudo yum install -y docker
 sudo systemctl start docker
