@@ -23,7 +23,7 @@
     "provisioners": [
         {
             "scripts": [
-                "provision.sh",
+                "provision.sh"
             ]
         }
     ]
