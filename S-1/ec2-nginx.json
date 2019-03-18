@@ -1,6 +1,6 @@
 {
     "variables": {
-      "name": "nginx",
+      "name": "nginx-packer-prashant",
       "source_ami": "ami-01ea49491c5a4d76f",
       "access_key":"",
       "secret_key":"",
