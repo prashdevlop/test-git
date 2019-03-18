@@ -14,8 +14,9 @@
       "region": "{{user `region`}}",
       "source_ami": "{{user `source_ami`}}",
       "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "ssh_keypair_name" : "terraform",
       "communicator": "ssh",
-      "ssh_username": "packtest",
       "run_tags":{"Name":"packer-image"}
     }],
     "provisioners": [
