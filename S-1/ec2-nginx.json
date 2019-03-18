@@ -1,0 +1,31 @@
+{
+    "variables": {
+      "name": "nginx",
+      "source_ami": "ami-03103e7ded4c02ef8",
+      "access_key":"",
+      "secret_key":"",
+      "region":"ap-south-1"
+    },
+    "builders": [{
+      "type": "amazon-ebs",
+      "access_key": "{{user `access_key`}}",
+      "secret_key":"{{user `secret_key`}}",
+      "ami_name": "{{user `name`}}",
+      "region": "{{user `region`}}",
+      "source_ami": "{{user `source_ami`}}",
+      "instance_type": "t2.micro",
+      "communicator": "ssh",
+      "ssh_username": "packtest",
+      "run_tags":{"Name":"packer-image"}
+    }],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": "sudo yum install -y epel-release"
+        },
+        {
+            "type": "shell",
+            "inline": ["sudo yum install -y nginx","sudo systemctl enable nginx", "sudo systemctl start nginx"]
+        }
+      ]
+}
