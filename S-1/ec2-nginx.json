@@ -1,7 +1,7 @@
 {
     "variables": {
       "name": "nginx",
-      "source_ami": "ami-5b673c34",
+      "source_ami": "ami-d5bf2caa",
       "access_key":"",
       "secret_key":"",
       "region":"ap-south-1"
