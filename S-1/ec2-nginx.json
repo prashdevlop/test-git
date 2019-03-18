@@ -24,7 +24,7 @@
         {
             "type": "shell",
             "scripts": [
-                "provision.sh"
+                "./provision.sh"
             ]
         }
     ]
