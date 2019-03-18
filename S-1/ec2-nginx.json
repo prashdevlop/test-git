@@ -22,12 +22,7 @@
     }],
     "provisioners": [
         {
-            "type": "shell",
-            "inline": "sudo yum install -y epel-release"
-        },
-        {
-            "type": "shell",
-            "inline": ["sudo yum install -y nginx","sudo systemctl enable nginx", "sudo systemctl start nginx"]
-        }
-      ]
+            "scripts": [
+                "provision.sh",
+            ]
 }
