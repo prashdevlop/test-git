@@ -1,8 +1,8 @@
 #!/bin/bash
-MONGO_INITDB_ROOT_USERNAME=`cat /root/user.txt`
-MONGO_INITDB_ROOT_PASSWORD=`cat /root/password.txt`
-ME_CONFIG_MONGODB_ADMINUSERNAME=`cat /root/user.txt`
-ME_CONFIG_MONGODB_ADMINPASSWORD=`cat /root/password.txt`
+MONGO_INITDB_ROOT_USERNAME=`cat /ec2-user/user.txt`
+MONGO_INITDB_ROOT_PASSWORD=`cat /ec2-user/password.txt`
+ME_CONFIG_MONGODB_ADMINUSERNAME=`cat /ec2-user/user.txt`
+ME_CONFIG_MONGODB_ADMINPASSWORD=`cat /ec2-user/password.txt`
 sudo yum update -y
 sudo yum install docker -y
 sudo yum install python-pip -y
