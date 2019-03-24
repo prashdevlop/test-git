@@ -6,7 +6,10 @@ resource "aws_instance" "example" {
   #key_name = "${var.key_name}"
 
   #count=3
-
+  provisioner "file" {
+    source      = "docker-compose.yml"
+    destination = "/home/ec2-user/"
+  }
   #Assign a pre-created security group
   security_groups = ["DMZ"]
 
