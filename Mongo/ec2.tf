@@ -6,6 +6,11 @@ resource "aws_instance" "example" {
   #key_name = "${var.key_name}"
 
   #count=3
+  connection {
+    type        = "ssh"
+    user        = "ec2-user"
+    private_key = "${file("~/.ssh/terraform.pem")}"
+  }
   provisioner "file" {
     source      = "docker-compose.yml"
     destination = "/home/ec2-user/docker-compose.yml"
@@ -40,7 +45,6 @@ resource "aws_instance" "example" {
     Name = "${var.tag_name}"
   }
 }
-
 data "template_file" "user_data" {
   template = "${file("user_data.tpl")}"
 }
