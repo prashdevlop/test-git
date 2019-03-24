@@ -8,4 +8,4 @@ sudo yum install docker -y
 sudo yum install docker-compose -y
 sudo service docker start
 sudo chkconfig docker on
-sudo docker-compose -f docker-compose.yml up
+sudo docker-compose -f /home/ec2-user/docker-compose.yml up
