@@ -10,6 +10,16 @@ resource "aws_instance" "example" {
     source      = "docker-compose.yml"
     destination = "/home/ec2-user/"
   }
+
+  provisioner "file" {
+    source      = "/root/user.txt"
+    destination = "/home/ec2-user/"
+  }
+
+  provisioner "file" {
+    source      = "/root/password.txt"
+    destination = "/home/ec2-user/"
+  }
   #Assign a pre-created security group
   security_groups = ["DMZ"]
 
